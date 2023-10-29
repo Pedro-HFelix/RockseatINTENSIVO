@@ -1,0 +1,255 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+      
+}
+
+:root{
+    font-size: 62.5%;
+    --magenta-pink-color:hsl(320, 69%, 42%);
+    --purple-color:hsl(244, 38%, 28%);
+    --linear-purple: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+    --white-color: hsl(0, 0%, 100%);
+}
+
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+
+#astronaut{
+    animation: start-image-astronaut 1.2s linear;
+}
+
+@keyframes start-image-astronaut{
+    from{
+        transform: translateY(-100%);
+    }
+}
+
+.itens-text{
+    display: grid;
+    justify-items: center;
+}
+
+#header-text{
+    margin-top: .5rem;
+}
+
+#header-text h1{
+    color: var(--magenta-pink-color);
+    font-size: 3.2rem;
+    font-weight: 900;
+    animation: start-text-header-h1 1.2s linear;
+}
+
+#header-text h3{
+    color: var(--purple-color);
+    font-size: 2rem;
+    font-weight: 600;
+    animation: start-text-header-h3 1.2s linear;
+}
+
+@keyframes start-text-header-h1{
+    from{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes start-text-header-h3{
+    from{
+        transform: translateX(100%);
+    }
+}
+
+#arrow{
+    margin-top: 3.5rem;
+    animation: start-arrow 1.2s linear, move-arrow .6s 1.2s alternate infinite linear ;
+ /* animation-name: move-arrow;
+    animation-duration: .6s;
+    animation-fill-mode: forwards; 
+    animation-direction: alternate; 
+    animation-delay: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+}
+
+@keyframes start-arrow{
+    from{
+        transform: translateY(90%);
+        
+    }
+}
+
+@keyframes move-arrow{
+    100%{
+        transform: translateY(10%);
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 4.9rem;
+    padding: 3.9rem 5.3rem;
+    margin-top: 9.3rem;
+    background: var(--linear-purple);
+}
+
+.card-planet{
+    display: flex;
+    padding: 2.6rem;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+
+    border-radius: 2rem;
+    background: var(--white-color);
+
+}
+
+.planet-img{
+    margin-bottom: 3.3rem;
+}
+
+.text-card{
+    display: flex;
+    width: 26.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.first-text-card{
+    color: var(--magenta-pink-color);
+    font-size: 2.9rem;
+    font-weight: 900;
+    margin-bottom: 1.9rem;
+    
+}
+
+.second-text-card{
+    color: var(--purple-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+
+
+#contact-forms{
+    background: var(--white-color);
+    padding: 7.8rem 3.9rem 6.5rem;
+}
+
+#contact-forms form h2 {
+    margin-bottom: 4.3rem;
+    color: var(--purple-color);
+  }
+
+.input-wrapper label{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+#contact-forms form .input-wrapper {
+    margin-bottom: 2.4rem;
+}
+  
+#contact-forms form input,
+#contact-forms form textarea {
+  width: 100%;
+  border: 0.15rem solid var(--purple-color);
+  border-radius: 1.6rem;
+  padding: 1.2rem 1.6rem 1.6rem;
+  color: var(--purple-color);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+#contact-forms form textarea {
+  height: 12.6rem;
+}
+
+#contact-forms form input::placeholder,
+#contact-forms form textarea::placeholder {
+  color: var(--purple-color);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+#contact-forms form input::placeholder {
+  padding-left: 2.8rem;
+}
+
+#contact-forms form button {
+  background: var(--linear-purple);
+  color: var(--white-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  padding: 1rem 1.6rem;
+  border-radius: 1.6rem;
+  cursor: pointer;
+  transition: filter 200ms;
+}
+
+#contact-forms form button:hover {
+  filter: brightness(0.9);
+}
+
+#name {
+  background: url(imgs/person.svg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+#email {
+  background: url(imgs/mail.svg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+footer p {
+    color: var(--white-color);
+    font-size: 1.9rem;
+    line-height: 2.4rem;
+    font-weight: 600;
+    text-align: center;
+    background: var(--linear-purple);
+}
+
+@media (min-width: 1000px) {
+    header{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        padding: 0 2.8rem 13.6rem 10.9rem;
+    } 
+ 
+    .itens-text{
+        justify-items: start;
+    } 
+    .itens-text #header-text{
+        margin-top: 31.2rem;
+    }
+
+    #astronaut{
+        margin-top: -14.7rem;
+    }
+    main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6rem;
+    }
+    #contact-forms {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        height: 62.2rem;
+        background: url(imgs/stars.png);
+        background-repeat: no-repeat;
+        background-position: right;
+      }
+}
